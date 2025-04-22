@@ -1,40 +1,46 @@
-// Simulating a row from Excel
-const sampleData = {
-    templateType: "Fact",
-    title: "Did You Know? 🤯",
-    mainText: "Bananas are berries, strawberries are not!",
-    subText: "Crazy, right?!"
-  };
-  
-  function applyTemplate(data) {
-    const titleElement = document.getElementById('title');
-    const mainTextElement = document.getElementById('mainText');
-    const subTextElement = document.getElementById('subText');
-    const container = document.getElementById('shortsContainer');
-  
-    // Set texts
-    titleElement.textContent = data.title;
-    mainTextElement.textContent = data.mainText;
-    subTextElement.textContent = data.subText;
-  
-    // Apply animations
-    titleElement.classList.add('animate__fadeInDown');
-    mainTextElement.classList.add('animate__zoomIn');
-    subTextElement.classList.add('animate__fadeInUp');
-  
-    // Apply styles based on template
-    if (data.templateType === "Fact") {
-      container.style.backgroundColor = "#FFEB3B"; // bright yellow
-      titleElement.style.color = "#D84315"; // deep orange
-      mainTextElement.style.color = "#1B5E20"; // dark green
-      subTextElement.style.color = "#004D40"; // teal
-    }
-    console.log("Template applied:", data.templateType);
-    // Later we can add "Quote", "Top 3 List", "Challenge", etc.
-  }
-  
-  // On page load
-  applyTemplate(sampleData);
-  document.querySelector('.content').classList.add('show');
 
-  
+function getQueryParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    templateType: params.get('templateType') || "Fact",
+    title: params.get('title') || "Default Title",
+    mainText: params.get('mainText') || "Default Main Text",
+    subText: params.get('subText') || "Default Sub Text",
+    ctaText: params.get('ctaText') || "\uD83D\uDC49 Subscribe for more!",
+    musicFile: params.get('musicFile') || "backgrounds/relaxing_music.mp3",
+    musicVolume: parseFloat(params.get('musicVolume')) || 0.2
+  };
+}
+
+function animateContent(data) {
+  const titleEl = document.getElementById('title');
+  const mainTextEl = document.getElementById('mainText');
+  const subTextEl = document.getElementById('subText');
+  const ctaTextEl = document.getElementById('ctaText');
+  const subscribeIcon = document.getElementById('subscribeIcon');
+
+  titleEl.textContent = decodeURIComponent(data.title);
+  mainTextEl.textContent = decodeURIComponent(data.mainText);
+  subTextEl.textContent = decodeURIComponent(data.subText);
+  ctaTextEl.textContent = decodeURIComponent(data.ctaText);
+
+  const bgMusic = document.getElementById('bgMusic');
+  bgMusic.src = decodeURIComponent(data.musicFile);
+  bgMusic.volume = data.musicVolume;
+  bgMusic.play().catch(e => console.log('Music autoplay blocked'));
+
+  let tl = gsap.timeline();
+
+  tl.from(titleEl, {opacity: 0, y: -100, duration: 1});
+  tl.from(mainTextEl, {opacity: 0, scale: 0.8, duration: 1});
+  tl.from(subTextEl, {opacity: 0, y: 100, duration: 1});
+
+  tl.to(ctaTextEl, {opacity: 1, scale: 1.1, duration: 1, delay: 0.5});
+  tl.to(ctaTextEl, {scale: 1, duration: 0.3});
+
+  tl.set(subscribeIcon, {display: 'block'});
+  tl.from(subscribeIcon, {opacity: 0, scale: 0.5, duration: 0.7, ease: "bounce"});
+}
+
+const data = getQueryParams();
+animateContent(data);
