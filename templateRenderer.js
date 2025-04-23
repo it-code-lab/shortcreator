@@ -252,7 +252,14 @@ function showContent(data) {
     document.getElementById('bgVideo').load();
 
     // Animate Title
-    titleEl.textContent = decodeURIComponent(data.title);
+    if (data.title !== "") {
+        titleEl.textContent = decodeURIComponent(data.title);
+        titleEl.style.padding = "10px";
+    }else{
+        titleEl.textContent = "";
+        titleEl.style.padding = "0px";
+    }
+        
 
     // Animate MainText blocks sequentially
     let mainTexts = data.mainTexts;
@@ -350,7 +357,7 @@ function readFromDummyInputData(selectedOption) {
     }
 
     const mainTexts = [];
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 0; i <= 10; i++) {
         const textValue = selectedData[`text${i}`];
         if (textValue !== undefined && textValue !== null && textValue !== "") {
             mainTexts.push(textValue);
