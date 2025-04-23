@@ -1,30 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pro Shorts Renderer</title>
+  <title>Cinematic Shorts Renderer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- <video autoplay muted loop id="bgVideo">
+  <source src="" type="video/mp4">
+</video> -->
+<div style="display: flex; flex-direction: row;">
 <div class="shorts-container" id="shortsContainer">
-  <div class="content">
+  <video autoplay muted loop id="bgVideo">
+    <source src="" type="video/mp4">
+  </video>
+  
+  <div id="contentContainer" class="content">
     <h1 id="title"></h1>
-    <p id="mainText"></p>
+
+    <div  class="mainTextWrapper">
+      <p id="mainText"></p>
+      <!-- <p id="mainText2"></p>
+      <p id="mainText3"></p> -->
+    </div>
+
     <p id="subText"></p>
     <p id="ctaText" class="cta"></p>
     <div id="subscribeIcon" class="subscribe-icon" style="display:none;">
       <img src="subscribe.svg" alt="Subscribe">
     </div>
   </div>
-</div>
 
+
+</div >
+<div class="configurations">
+  <select id="textStyle">
+    <option value="content_style1">content_style1</option>
+    <option value="content_style2">content_style2</option>
+    <option value="content_style3">content_style3</option>
+    <option value="content_style4">content_style4</option>
+    <option value="content_style5">content_style5</option>
+</select>
+
+<select id="loadData">
+  <option value="0">0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+
+</select>
+
+</div>
+</div>
 <audio id="bgMusic" loop></audio>
 
-<script src="gsap.min.js"></script>
-<script src="typed.min.js"></script>
 <script src="templateRenderer.js"></script>
 
 </body>
