@@ -1,6 +1,7 @@
 let content_style = "content_style2";
 let textStyleDropdown = document.getElementById("textStyle");
 let loadDataDropdown = document.getElementById("loadData");
+const fontFamily = document.getElementById('fontFamily');
 
 let dummyInputData = [
     {
@@ -389,4 +390,9 @@ loadDataDropdown.addEventListener("change", () => {
     const selectedOption = loadDataDropdown.value;
     data = readFromDummyInputData(selectedOption);
     showContent(data);
+});
+
+fontFamily.addEventListener('change', () => {
+    const selectedFont = fontFamily.value;
+    document.body.style.fontFamily = selectedFont;
 });

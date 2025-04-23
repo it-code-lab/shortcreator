@@ -1,3 +1,5 @@
+
+/* References: https://www.canva.com/templates/?query=quote&category=tAEEZ_gIPxM */
 body,
 html {
     margin: 0;
@@ -5,7 +7,7 @@ html {
     width: 100%;
     height: 100%;
     /* overflow: hidden; */
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
     /* background-color: black; */
 }
 
@@ -37,18 +39,21 @@ html {
 .content h1,
 .content p {
     margin: 20px;
-    padding: 0 10px;
+    /* padding: 0 10px; */
     /* color: #ffffff; */
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 #title {
-    font-size: 20px;
-    font-weight: 900;
+    font-size: 15px; 
+    font-weight: 400;
     line-height: 1.2;
     opacity: 0;
     animation: fadeSlideUp 0.8s ease forwards;
     animation-delay: 0.5s;
+    font-family: 'Lilita One', cursive;
+    background: rgba(129, 127, 14, 0.868);
+    border-radius: 20px;
 }
 
 .mainTextWrapper {
@@ -62,6 +67,7 @@ html {
     opacity: 0;
     animation: fadeSlideUp 1s ease forwards;
     animation-delay: 1s;
+    width: 80%;
 }
 
 span{
@@ -69,8 +75,8 @@ span{
 }
 
 .content_style1 {
-    font-size: 30px;
-    font-weight: 700;
+    /* font-size: 30px; */
+    /* font-weight: 700; */
     color: #fff;
     animation-delay: 1.5s;
 }
@@ -80,16 +86,16 @@ span{
 }
 
 .content_style2 {
-    font-size: 20px;
-    font-weight: 700;
+    /* font-size: 20px; */
+    /* font-weight: 700; */
     color: #f8f7f4;
     animation-delay: 1.5s;
     text-transform: uppercase;
 }
 
 #subText {
-    font-size: 20px;
-    font-weight: 900;
+    /* font-size: 20px; */
+    /* font-weight: 900; */
     opacity: 0;
     animation: fadeSlideUp 1s ease forwards;
     animation-delay: 3s;
@@ -97,8 +103,8 @@ span{
 }
 
 #ctaText {
-    font-size: 20px;
-    font-weight: 900;
+    /* font-size: 20px; */
+    /* font-weight: 900; */
     color: #ffd600;
     opacity: 0;
     animation: fadeSlideUp 1s ease forwards;
@@ -139,4 +145,9 @@ select {
     padding: 5px;
     margin: 10px;
     width: 150px;
+}
+
+.fontCheck{
+    visibility: hidden; 
+  
 }
