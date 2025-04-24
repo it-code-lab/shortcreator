@@ -21,7 +21,8 @@ let dummyInputData = [
       ctaText: "👉 Follow for more wild facts!",
       musicFile: "background_music/sample_music.mp3",
       musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4"
+      backgroundVideo: "background_videos/sample_bg.mp4",
+      ttsEnabled: true
     },
     {
       templateType: "Quote",
@@ -40,7 +41,8 @@ let dummyInputData = [
       ctaText: "",
       musicFile: "background_music/sample_music.mp3",
       musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4"
+      backgroundVideo: "background_videos/sample_bg.mp4",
+      ttsEnabled: true
     },
     {
       templateType: "List",
@@ -59,7 +61,8 @@ let dummyInputData = [
       ctaText: "💪 Stay energized!",
       musicFile: "background_music/sample_music.mp3",
       musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4"
+      backgroundVideo: "background_videos/sample_bg.mp4",
+      ttsEnabled: true
     },
     {
       templateType: "Challenge",
@@ -78,7 +81,8 @@ let dummyInputData = [
       ctaText: "🧩 Follow for daily riddles!",
       musicFile: "background_music/sample_music.mp3",
       musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4"
+      backgroundVideo: "background_videos/sample_bg.mp4",
+      ttsEnabled: true
     },
     {
       templateType: "Life Advice",
@@ -97,7 +101,8 @@ let dummyInputData = [
       ctaText: "✨ Share this with someone who needs it!",
       musicFile: "background_music/sample_music.mp3",
       musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4"
+      backgroundVideo: "background_videos/sample_bg.mp4",
+      ttsEnabled: true
     },
     {
       templateType: "Fact",
@@ -116,7 +121,8 @@ let dummyInputData = [
       ctaText: "",
       musicFile: "background_music/sample_music.mp3",
       musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4"
+      backgroundVideo: "background_videos/sample_bg.mp4",
+      ttsEnabled: true
     },
     {
       templateType: "Quote",
@@ -135,7 +141,8 @@ let dummyInputData = [
       ctaText: "",
       musicFile: "background_music/sample_music.mp3",
       musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4"
+      backgroundVideo: "background_videos/sample_bg.mp4",
+      ttsEnabled: true
     },
     {
       templateType: "List",
@@ -154,7 +161,8 @@ let dummyInputData = [
       ctaText: "",
       musicFile: "background_music/sample_music.mp3",
       musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4"
+      backgroundVideo: "background_videos/sample_bg.mp4",
+      ttsEnabled: true
     },
     {
       templateType: "Challenge",
@@ -173,7 +181,8 @@ let dummyInputData = [
       ctaText: "",
       musicFile: "background_music/sample_music.mp3",
       musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4"
+      backgroundVideo: "background_videos/sample_bg.mp4",
+      ttsEnabled: true
     },
     {
       templateType: "Life Advice",
@@ -192,7 +201,8 @@ let dummyInputData = [
       ctaText: "✨ Be kind to yourself.",
       musicFile: "background_music/sample_music.mp3",
       musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4"
+      backgroundVideo: "background_videos/sample_bg.mp4",
+      ttsEnabled: true
     }
   ];
   
@@ -422,7 +432,8 @@ function readFromDummyInputData(selectedOption) {
         ctaText: selectedData.ctaText || "",
         musicFile: selectedData.musicFile || "background_music/sample_music.mp3",
         musicVolume: parseFloat(selectedData.musicVolume) || 0.2,
-        backgroundVideo: selectedData.backgroundVideo || "background_videos/sample_bg.mp4"
+        backgroundVideo: selectedData.backgroundVideo || "background_videos/sample_bg.mp4",
+        ttsEnabled: selectedData.ttsEnabled || false
     };
 }
 
