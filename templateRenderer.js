@@ -240,7 +240,6 @@ function showContent(data) {
     const mainTextEl = document.getElementById('mainText');
     const subTextEl = document.getElementById('subText');
     const ctaTextEl = document.getElementById('ctaText');
-    const subscribeIcon = document.getElementById('subscribeIcon');
     const bgMusic = document.getElementById('bgMusic');
     const bgVideo = document.getElementById('bgVideo').querySelector('source');
 

@@ -144,13 +144,6 @@ span{
     font-family: monospace;
 }
 
-.subscribe-icon img {
-    width: 300px;
-    margin-top: 25px;
-    opacity: 0;
-    animation: fadeSlideUp 1s ease forwards;
-    animation-delay: 5.5s;
-}
 
 @keyframes fadeSlideUp {
     0% {
