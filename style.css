@@ -125,7 +125,7 @@ span{
     /* font-weight: 900; */
     opacity: 0;
     /* animation: fadeSlideUp 1s ease forwards; */
-    animation-delay: 3s;
+    /* animation-delay: 3s; */
     /* margin-top: 30px; */
     font-family: 'Lilita One', cursive;
     width: 80%;
@@ -138,8 +138,8 @@ span{
     /* font-weight: 900; */
     color: turquoise;
     opacity: 0;
-    animation: fadeSlideUp 1s ease forwards;
-    animation-delay: 5s;
+    /* animation: fadeSlideUp 1s ease forwards;
+    animation-delay: 5s; */
     margin-top: 30px;
     font-family: monospace;
 }
