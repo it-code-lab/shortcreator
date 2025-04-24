@@ -5,210 +5,221 @@ const fontFamily = document.getElementById('fontFamily');
 
 let dummyInputData = [
     {
-      templateType: "Fact",
-      title: "Mind Blown 🤯",
-      text1: "Octopuses have three hearts^Two hearts pump blood to the gills^One heart pumps blood to the body",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-      text8: "",
-      text9: "",
-      text10: "",
-      subText: "When they swim, one heart stops!",
-      ctaText: "👉 Follow for more wild facts!",
-      musicFile: "background_music/sample_music.mp3",
-      musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4",
-      ttsEnabled: true
+        templateType: "Fact",
+        title: "Mind Blown 🤯",
+        text1: "Octopuses have three hearts^Two hearts pump blood to the gills^One heart pumps blood to the body",
+        text2: "",
+        text3: "",
+        text4: "",
+        text5: "",
+        text6: "",
+        text7: "",
+        text8: "",
+        text9: "",
+        text10: "",
+        subText: "When they swim, one heart stops!",
+        ctaText: "👉 Follow for more wild facts!",
+        musicFile: "background_music/sample_music.mp3",
+        musicVolume: 0.2,
+        backgroundVideo: "background_videos/sample_bg.mp4",
+        ttsEnabled: true
     },
     {
-      templateType: "Quote",
-      title: "",
-      text1: "Success is not final, failure is not fatal.^It is the courage to continue that counts.",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-      text8: "",
-      text9: "",
-      text10: "",
-      subText: "— Winston Churchill",
-      ctaText: "",
-      musicFile: "background_music/sample_music.mp3",
-      musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4",
-      ttsEnabled: true
+        templateType: "Quote",
+        title: "",
+        text1: "Success is not final, failure is not fatal.^It is the courage to continue that counts.",
+        text2: "",
+        text3: "",
+        text4: "",
+        text5: "",
+        text6: "",
+        text7: "",
+        text8: "",
+        text9: "",
+        text10: "",
+        subText: "— Winston Churchill",
+        ctaText: "",
+        musicFile: "background_music/sample_music.mp3",
+        musicVolume: 0.2,
+        backgroundVideo: "background_videos/sample_bg.mp4",
+        ttsEnabled: true
     },
     {
-      templateType: "List",
-      title: "Top 5 Energy Boosters ⚡",
-      text1: "1. Morning sunlight^2. 2L water^3. 30 min walk^4. Cold shower^5. Deep breathing",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-      text8: "",
-      text9: "",
-      text10: "",
-      subText: "Try them for a week and feel the difference!",
-      ctaText: "💪 Stay energized!",
-      musicFile: "background_music/sample_music.mp3",
-      musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4",
-      ttsEnabled: true
+        templateType: "List",
+        title: "Top 5 Energy Boosters ⚡",
+        text1: "1. Morning sunlight^2. 2L water^3. 30 min walk^4. Cold shower^5. Deep breathing",
+        text2: "",
+        text3: "",
+        text4: "",
+        text5: "",
+        text6: "",
+        text7: "",
+        text8: "",
+        text9: "",
+        text10: "",
+        subText: "Try them for a week and feel the difference!",
+        ctaText: "💪 Stay energized!",
+        musicFile: "background_music/sample_music.mp3",
+        musicVolume: 0.2,
+        backgroundVideo: "background_videos/sample_bg.mp4",
+        ttsEnabled: true
     },
     {
-      templateType: "Challenge",
-      title: "Brain Teaser 🧠",
-      text1: "I speak without a mouth^I echo but have no ears^What am I?",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-      text8: "",
-      text9: "",
-      text10: "",
-      subText: "Answer: An echo.",
-      ctaText: "🧩 Follow for daily riddles!",
-      musicFile: "background_music/sample_music.mp3",
-      musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4",
-      ttsEnabled: true
+        templateType: "Challenge",
+        title: "Brain Teaser 🧠",
+        text1: "I speak without a mouth^I echo but have no ears^What am I?",
+        text2: "",
+        text3: "",
+        text4: "",
+        text5: "",
+        text6: "",
+        text7: "",
+        text8: "",
+        text9: "",
+        text10: "",
+        subText: "Answer: An echo.",
+        ctaText: "🧩 Follow for daily riddles!",
+        musicFile: "background_music/sample_music.mp3",
+        musicVolume: 0.2,
+        backgroundVideo: "background_videos/sample_bg.mp4",
+        ttsEnabled: true
     },
     {
-      templateType: "Life Advice",
-      title: "Simple Truth 🌱",
-      text1: "You can't pour from an empty cup.^Take care of yourself first.^Even 10 minutes a day is enough.",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-      text8: "",
-      text9: "",
-      text10: "",
-      subText: "Self-care is not selfish.",
-      ctaText: "✨ Share this with someone who needs it!",
-      musicFile: "background_music/sample_music.mp3",
-      musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4",
-      ttsEnabled: true
+        templateType: "Life Advice",
+        title: "Simple Truth 🌱",
+        text1: "You can't pour from an empty cup.^Take care of yourself first.^Even 10 minutes a day is enough.",
+        text2: "",
+        text3: "",
+        text4: "",
+        text5: "",
+        text6: "",
+        text7: "",
+        text8: "",
+        text9: "",
+        text10: "",
+        subText: "Self-care is not selfish.",
+        ctaText: "✨ Share this with someone who needs it!",
+        musicFile: "background_music/sample_music.mp3",
+        musicVolume: 0.2,
+        backgroundVideo: "background_videos/sample_bg.mp4",
+        ttsEnabled: true
     },
     {
-      templateType: "Fact",
-      title: "Weird But True 😲",
-      text1: "Sharks existed before trees!^Trees: 350 million years ago^Sharks: 400 million years ago",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-      text8: "",
-      text9: "",
-      text10: "",
-      subText: "They’ve been around longer than dinosaurs too!",
-      ctaText: "",
-      musicFile: "background_music/sample_music.mp3",
-      musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4",
-      ttsEnabled: true
+        templateType: "Fact",
+        title: "Weird But True 😲",
+        text1: "Sharks existed before trees!^Trees: 350 million years ago^Sharks: 400 million years ago",
+        text2: "",
+        text3: "",
+        text4: "",
+        text5: "",
+        text6: "",
+        text7: "",
+        text8: "",
+        text9: "",
+        text10: "",
+        subText: "They’ve been around longer than dinosaurs too!",
+        ctaText: "",
+        musicFile: "background_music/sample_music.mp3",
+        musicVolume: 0.2,
+        backgroundVideo: "background_videos/sample_bg.mp4",
+        ttsEnabled: true
     },
     {
-      templateType: "Quote",
-      title: "",
-      text1: "“Be yourself; everyone else is already taken.”",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-      text8: "",
-      text9: "",
-      text10: "",
-      subText: "— Oscar Wilde",
-      ctaText: "",
-      musicFile: "background_music/sample_music.mp3",
-      musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4",
-      ttsEnabled: true
+        templateType: "Quote",
+        title: "",
+        text1: "“Be yourself; everyone else is already taken.”",
+        text2: "",
+        text3: "",
+        text4: "",
+        text5: "",
+        text6: "",
+        text7: "",
+        text8: "",
+        text9: "",
+        text10: "",
+        subText: "— Oscar Wilde",
+        ctaText: "",
+        musicFile: "background_music/sample_music.mp3",
+        musicVolume: 0.2,
+        backgroundVideo: "background_videos/sample_bg.mp4",
+        ttsEnabled: true
     },
     {
-      templateType: "List",
-      title: "3 Quick Wins Today 🎯",
-      text1: "✅ Make your bed^✅ Drink water^✅ Plan your top 3 tasks",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-      text8: "",
-      text9: "",
-      text10: "",
-      subText: "Small wins lead to big momentum!",
-      ctaText: "",
-      musicFile: "background_music/sample_music.mp3",
-      musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4",
-      ttsEnabled: true
+        templateType: "List",
+        title: "3 Quick Wins Today 🎯",
+        text1: "✅ Make your bed^✅ Drink water^✅ Plan your top 3 tasks",
+        text2: "",
+        text3: "",
+        text4: "",
+        text5: "",
+        text6: "",
+        text7: "",
+        text8: "",
+        text9: "",
+        text10: "",
+        subText: "Small wins lead to big momentum!",
+        ctaText: "",
+        musicFile: "background_music/sample_music.mp3",
+        musicVolume: 0.2,
+        backgroundVideo: "background_videos/sample_bg.mp4",
+        ttsEnabled: true
     },
     {
-      templateType: "Challenge",
-      title: "Can You Guess? 🤔",
-      text1: "The more you take, the more you leave behind.^What are they?",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-      text8: "",
-      text9: "",
-      text10: "",
-      subText: "Answer: Footsteps 👣",
-      ctaText: "",
-      musicFile: "background_music/sample_music.mp3",
-      musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4",
-      ttsEnabled: true
+        templateType: "Challenge",
+        title: "Can You Guess? 🤔",
+        text1: "The more you take, the more you leave behind.^What are they?",
+        text2: "",
+        text3: "",
+        text4: "",
+        text5: "",
+        text6: "",
+        text7: "",
+        text8: "",
+        text9: "",
+        text10: "",
+        subText: "Answer: Footsteps 👣",
+        ctaText: "",
+        musicFile: "background_music/sample_music.mp3",
+        musicVolume: 0.2,
+        backgroundVideo: "background_videos/sample_bg.mp4",
+        ttsEnabled: true
     },
     {
-      templateType: "Life Advice",
-      title: "Gentle Reminder 💛",
-      text1: "Slow progress is still progress.^Resting is part of the journey.^You’re doing better than you think.",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-      text8: "",
-      text9: "",
-      text10: "",
-      subText: "",
-      ctaText: "✨ Be kind to yourself.",
-      musicFile: "background_music/sample_music.mp3",
-      musicVolume: 0.2,
-      backgroundVideo: "background_videos/sample_bg.mp4",
-      ttsEnabled: true
+        templateType: "Life Advice",
+        title: "Gentle Reminder 💛",
+        text1: "Slow progress is still progress.^Resting is part of the journey.^You’re doing better than you think.",
+        text2: "",
+        text3: "",
+        text4: "",
+        text5: "",
+        text6: "",
+        text7: "",
+        text8: "",
+        text9: "",
+        text10: "",
+        subText: "",
+        ctaText: "✨ Be kind to yourself.",
+        musicFile: "background_music/sample_music.mp3",
+        musicVolume: 0.2,
+        backgroundVideo: "background_videos/sample_bg.mp4",
+        ttsEnabled: true
     }
-  ];
-  
+];
 
-
-
+let currentIndex = 0;
+let currentPartIndex = 0;
+let mainTexts = [];
+let subText = "";
+let ctaText = "";
+let ttsEnabled = false;
+const titleEl = document.getElementById('title');
+const mainTextEl = document.getElementById('mainText');
+const subTextEl = document.getElementById('subText');
+const ctaTextEl = document.getElementById('ctaText');
+const bgMusic = document.getElementById('bgMusic');
+const bgVideo = document.getElementById('bgVideo').querySelector('source');
+let parts = [];
+//DND - Not in use
 function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
     const mainTexts = [];
@@ -233,7 +244,7 @@ function getQueryParams() {
     };
 }
 
-
+//DND - Not in use
 function splitTextIntoSpans(element, text, baseDelay = 1.5) {
     element.innerHTML = "";
     const words = text.split(" ");
@@ -246,12 +257,7 @@ function splitTextIntoSpans(element, text, baseDelay = 1.5) {
 
 function showContent(data) {
     console.log("showContent called with data:", data);
-    const titleEl = document.getElementById('title');
-    const mainTextEl = document.getElementById('mainText');
-    const subTextEl = document.getElementById('subText');
-    const ctaTextEl = document.getElementById('ctaText');
-    const bgMusic = document.getElementById('bgMusic');
-    const bgVideo = document.getElementById('bgVideo').querySelector('source');
+
 
     // Set video and music********DND**********
     // bgMusic.src = decodeURIComponent(data.musicFile);
@@ -265,90 +271,134 @@ function showContent(data) {
     if (data.title !== "") {
         titleEl.textContent = decodeURIComponent(data.title);
         titleEl.style.padding = "10px";
-    }else{
+    } else {
         titleEl.textContent = "";
         titleEl.style.padding = "0px";
     }
-        
 
     // Animate MainText blocks sequentially
-    let mainTexts = data.mainTexts;
-    let currentIndex = 0;
+    mainTexts = data.mainTexts;
 
     let totalTextLength = 0;
     for (let i = 0; i < mainTexts.length; i++) {
         totalTextLength += mainTexts[i].length;
     }
 
-    function displayNextText() {
-        if (currentIndex < mainTexts.length) {
-
-            // Clear previous text element if it exists
-            mainTextEl.innerHTML = '';
-
-            const text = mainTexts[currentIndex];
-            const textElement = document.createElement('p');
-            let subTexts = text.split("^");
-            let prevText = "";
-            if (subTexts.length > 1) {
-                for (let i = 0; i < subTexts.length; i++) {
-                    let subTextElement = document.createElement('p');
-                    if (i > 0) {
-                        //subTextElement.className = "noDisplay";
-                        subTextElement.style.visibility = "hidden";
-                        //removeNoDisplayAfterSeconds(subTextElement, subTexts[i-1].length/10);
-                        addVisibilityClass(subTextElement, prevText.length/10);
-                    }
-                    subTextElement.textContent = subTexts[i];
-                    subTextElement.classList.add("fade-in-slide-Up");
-                    mainTextEl.appendChild(subTextElement);
-                    prevText = prevText + subTexts[i];
-                }
-                
-            }else {
-                textElement.textContent = text;
-            }
-                
-
-
-            // Calculate duration based on text length (you can adjust the multiplier)
-            const durationMs = text.length * 100; // Example: 100ms per character
-
-
-            mainTextEl.appendChild(textElement);
-
-            if (currentIndex < mainTexts.length - 1) {
-                setTimeout(() => {
-                    textElement.style.display = 'none';
-                    currentIndex++;
-                    displayNextText(); // Display the next text
-                }, durationMs);
-            }
-            // currentIndex++;
-        }
-    }
-
     displayNextText(); // Start displaying the first text
 
     subTextEl.textContent = decodeURIComponent(data.subText);
     subTextEl.style.visibility = "hidden";
-    addVisibilityClass(subTextEl, totalTextLength/10);
+    addVisibility(subTextEl, totalTextLength / 10);
 
     // CTA and Subscribe
     ctaTextEl.textContent = decodeURIComponent(data.ctaText);
     ctaTextEl.style.visibility = "hidden";
-    addVisibilityClass(ctaTextEl, (totalTextLength/10) + 1);
+    addVisibility(ctaTextEl, (totalTextLength / 10) + 1);
 }
 
-function removeNoDisplayAfterSeconds(element, seconds) {
-    setTimeout(() => {
-        element.style.display = 'block';
-    }, seconds * 1000);
+
+function displayNextText() {
+    if (currentIndex < mainTexts.length) {
+
+        // Clear previous text element if it exists
+        mainTextEl.innerHTML = '';
+
+        let currentText = mainTexts[currentIndex];
+        let textElement = document.createElement('p');
+        let parts = currentText.includes("^") ? currentText.split("^") : [currentText];
+        let prevText = "";
+
+        for (let i = 0; i < parts.length; i++) {
+            let subTextElement = document.createElement('p');
+            if (i > 0) {
+                //subTextElement.className = "noDisplay";
+                subTextElement.style.visibility = "hidden";
+                addVisibility(subTextElement, prevText.length / 10);
+            }
+            subTextElement.textContent = parts[i];
+            subTextElement.classList.add("fade-in-slide-Up");
+            mainTextEl.appendChild(subTextElement);
+            prevText = prevText + parts[i];
+        }
+
+
+        // Calculate duration based on text length (you can adjust the multiplier)
+        let durationMs = currentText.length * 100; // Example: 100ms per character
+
+        mainTextEl.appendChild(textElement);
+
+        if (currentIndex < mainTexts.length - 1) {
+            setTimeout(() => {
+                textElement.style.display = 'none';
+                currentIndex++;
+                displayNextText(); // Display the next text
+            }, durationMs);
+        }
+        // currentIndex++;
+    }
 }
 
-function addVisibilityClass(element, seconds) {
+//DND - Working 
+function displayNextText_old() {
+    if (currentIndex < mainTexts.length) {
+
+        // Clear previous text element if it exists
+        mainTextEl.innerHTML = '';
+
+        let text = mainTexts[currentIndex];
+        let textElement = document.createElement('p');
+        let subTexts = text.split("^");
+        let prevText = "";
+        if (subTexts.length > 1) {
+            for (let i = 0; i < subTexts.length; i++) {
+                let subTextElement = document.createElement('p');
+                if (i > 0) {
+                    //subTextElement.className = "noDisplay";
+                    subTextElement.style.visibility = "hidden";
+                    addVisibility(subTextElement, prevText.length / 10);
+                }
+                subTextElement.textContent = subTexts[i];
+                subTextElement.classList.add("fade-in-slide-Up");
+                mainTextEl.appendChild(subTextElement);
+                prevText = prevText + subTexts[i];
+            }
+
+        } else {
+            textElement.textContent = text;
+        }
+        // Calculate duration based on text length (you can adjust the multiplier)
+        let durationMs = text.length * 100; // Example: 100ms per character
+
+        mainTextEl.appendChild(textElement);
+
+        if (currentIndex < mainTexts.length - 1) {
+            setTimeout(() => {
+                textElement.style.display = 'none';
+                currentIndex++;
+                displayNextText(); // Display the next text
+            }, durationMs);
+        }
+        // currentIndex++;
+    }
+}
+
+
+
+// function removeNoDisplayAfterSeconds(element, seconds) {
+//     setTimeout(() => {
+//         element.style.display = 'block';
+//     }, seconds * 1000);
+// }
+
+function addVisibilityClass(el, delay = 0) {
+    el.style.animationDelay = `${delay}s`;
+    el.classList.add("fade-in");
+  }
+
+  
+function addVisibility(element, seconds=0) {
     setTimeout(() => {
-        
+
         // 🔹 Reset animation (remove & re-add class)
         element.classList.remove("fade-in-slide-Up");
         void element.offsetWidth;  // Trigger reflow to restart animation
@@ -357,57 +407,14 @@ function addVisibilityClass(element, seconds) {
     }, seconds * 1000);
 }
 
-function showContent_old(data) {
-    const titleEl = document.getElementById('title');
-
-    const mainTextEl = document.getElementById('mainText');
-    const subTextEl = document.getElementById('subText');
-    const ctaTextEl = document.getElementById('ctaText');
-    const subscribeIcon = document.getElementById('subscribeIcon');
-    const bgMusic = document.getElementById('bgMusic');
-    const bgVideo = document.getElementById('bgVideo').querySelector('source');
-
-    // Set video and music - DND***********
-    // bgMusic.src = decodeURIComponent(data.musicFile);
-    // bgMusic.volume = data.musicVolume;
-    // bgMusic.play().catch(e => console.log('Music autoplay blocked'));
-
-    bgVideo.src = decodeURIComponent(data.backgroundVideo);
-    document.getElementById('bgVideo').load();
-
-    // Animate Title
-    titleEl.textContent = decodeURIComponent(data.title);
-
-    // Animate MainText blocks
-    //if (data.mainText) splitTextIntoSpans(mainTextEl, decodeURIComponent(data.mainText), 1.5);
-
-    // if (data.mainText2) splitTextIntoSpans(mainText2El, decodeURIComponent(data.mainText2), 2.5);
-    // if (data.mainText3) splitTextIntoSpans(mainText3El, decodeURIComponent(data.mainText3), 3.5);
-
-    // SubText
-    let mainTexts = data.mainTexts;
-    mainTexts.forEach(text => {
-        const textElement = document.createElement('p');
-        textElement.textContent = text;
-
-        // Calculate duration based on text length (you can adjust the multiplier)
-        const durationMs = text.length * 100; // Example: 100ms per character
-
-        mainTextEl.appendChild(textElement);
-
-        // You'll likely want to add a delay or animation here to control the display duration.
-        // For a simple delay:
-        setTimeout(() => {
-            textElement.style.display = 'none'; // Hide the element after the calculated duration
-        }, durationMs);
-    });
-
-    subTextEl.textContent = decodeURIComponent(data.subText);
-
-    // CTA and Subscribe
-    ctaTextEl.textContent = decodeURIComponent(data.ctaText);
+function speakText(text, onComplete) {
+    if (!window.speechSynthesis) return onComplete();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = 1.0;
+    utterance.onend = onComplete;
+    speechSynthesis.speak(utterance);
 }
-
 
 function readFromDummyInputData(selectedOption) {
     const selectedData = dummyInputData[selectedOption];
@@ -437,8 +444,8 @@ function readFromDummyInputData(selectedOption) {
     };
 }
 
-let data = getQueryParams();
-data = readFromDummyInputData("1");
+// let data = getQueryParams();
+let data = readFromDummyInputData("1");
 showContent(data);
 contentContainer = document.getElementById("contentContainer");
 contentContainer.classList.add(content_style);
