@@ -283,7 +283,8 @@ function showContent(data) {
     for (let i = 0; i < mainTexts.length; i++) {
         totalTextLength += mainTexts[i].length;
     }
-
+    currentIndex = 0;
+    mainTextEl.innerHTML = ''; // Clear previous content
     displayNextText(); // Start displaying the first text
 
     subTextEl.textContent = decodeURIComponent(data.subText);
@@ -299,44 +300,68 @@ function showContent(data) {
 
 function displayNextText() {
     if (currentIndex < mainTexts.length) {
-
-        // Clear previous text element if it exists
         mainTextEl.innerHTML = '';
 
         let currentText = mainTexts[currentIndex];
-        let textElement = document.createElement('p');
         let parts = currentText.includes("^") ? currentText.split("^") : [currentText];
-        let prevText = "";
+        const partElements = [];
 
-        for (let i = 0; i < parts.length; i++) {
-            let subTextElement = document.createElement('p');
-            if (i > 0) {
-                //subTextElement.className = "noDisplay";
-                subTextElement.style.visibility = "hidden";
-                addVisibility(subTextElement, prevText.length / 10);
-            }
-            subTextElement.textContent = parts[i];
-            subTextElement.classList.add("fade-in-slide-Up");
-            mainTextEl.appendChild(subTextElement);
-            prevText = prevText + parts[i];
-        }
+        // Step 1: Add all elements initially (but hidden)
+        parts.forEach((part, index) => {
+            let el = document.createElement('p');
+            el.textContent = part;
+            el.classList.add("mainTextPart");
+            el.style.opacity = 0;
+            el.style.transition = "opacity 0.5s ease";
+            mainTextEl.appendChild(el);
+            partElements.push(el);
+        });
 
+        let i = 0;
 
-        // Calculate duration based on text length (you can adjust the multiplier)
-        let durationMs = currentText.length * 100; // Example: 100ms per character
-
-        mainTextEl.appendChild(textElement);
-
-        if (currentIndex < mainTexts.length - 1) {
-            setTimeout(() => {
-                textElement.style.display = 'none';
+        // Step 2: Show each part (and optionally speak)
+        function showNextPart() {
+            if (i >= parts.length) {
                 currentIndex++;
-                displayNextText(); // Display the next text
-            }, durationMs);
+                displayNextText();
+                return;
+            }
+
+            const el = partElements[i];
+            el.style.opacity = 1;  // reveal smoothly
+            const part = parts[i];
+
+            i++;
+            if (ttsEnabled) {
+                speakText(part, showNextPart);
+            } else {
+                setTimeout(showNextPart, part.length * 60); // adjust multiplier if needed
+            }
         }
-        // currentIndex++;
+
+        showNextPart();
+
+    } else {
+        // Show subText
+        if (subText) {
+            const subTextEl = document.createElement('p');
+            subTextEl.textContent = subText;
+            subTextEl.classList.add("fade-in-slide-Up");
+            mainTextEl.appendChild(subTextEl);
+        }
+
+        // Show CTA
+        if (ctaText) {
+            setTimeout(() => {
+                const ctaEl = document.createElement('p');
+                ctaEl.textContent = ctaText;
+                ctaEl.classList.add("fade-in-slide-Up");
+                mainTextEl.appendChild(ctaEl);
+            }, 1000);
+        }
     }
 }
+
 
 //DND - Working 
 function displayNextText_old() {

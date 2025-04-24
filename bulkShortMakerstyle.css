@@ -45,7 +45,7 @@ html {
     /* margin: 20px; */
 
     /* padding: 0 10px; */
-    /* color: #ffffff; */
+    color: #ffffff;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     /* animation: fadeSlideUp 1s ease forwards; */
 }
@@ -101,18 +101,25 @@ span{
     display: inline-block;
 }
 
-.content_style1 {
+/* Camel case, center aligned, animation up */
+.style1_camel_center_up {
     /* font-size: 30px; */
     /* font-weight: 700; */
     color: #fff;
     animation-delay: 1.5s;
 }
-.content_style1 span {
+.style1_camel_center_up span {
     opacity: 0;
     animation: fadeSlideUp 0.6s ease forwards;
 }
 
-.content_style2 {
+.style1_camel_center_up .mainTextPart {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: #fff;
+}
+
+.style2_upper_center_up {
     /* font-size: 20px; */
     /* font-weight: 700; */
     color: #f8f7f4;
@@ -120,6 +127,45 @@ span{
     text-transform: uppercase;
 }
 
+.style2_upper_center_up span {
+    opacity: 0;
+    animation: fadeSlideUp 0.6s ease forwards;
+}
+
+.style2_upper_center_up .mainTextPart {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: #fff;
+}
+
+.style3_upper_left_up {
+    /* font-size: 20px; */
+    /* font-weight: 700; */
+    color: #f8f7f4;
+    animation-delay: 1.5s;
+    text-transform: uppercase;
+}
+
+.style3_upper_left_up span {
+    opacity: 0;
+    animation: fadeSlideUp 0.6s ease forwards;
+    text-align: left;
+}
+
+.style3_upper_left_up .mainTextPart {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: #fff;
+    text-align: left;
+}
+
+.mainTextPartX {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    /* font-size: 1.5rem;
+    margin: 10px 0; */
+  }
+  
 #subText {
     /* font-size: 20px; */
     /* font-weight: 900; */
