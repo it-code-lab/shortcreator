@@ -42,11 +42,18 @@ html {
 
 .content h1,
 .content p {
-    margin: 20px;
+    /* margin: 20px; */
+
     /* padding: 0 10px; */
     /* color: #ffffff; */
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    /* animation: fadeSlideUp 1s ease forwards; */
 }
+
+.fade-in-slide-Up {
+    animation: fadeSlideUp 1s ease forwards;
+}
+
 .contentWrapper{
     position: relative;
 }
@@ -74,7 +81,7 @@ html {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px;
     border-radius: 20px;
-    margin: 20px;
+    margin: 20px auto;
     /* margin-top: 30px;
     margin-bottom: 30px; */
     /* display: inline-block; */
@@ -117,19 +124,24 @@ span{
     /* font-size: 20px; */
     /* font-weight: 900; */
     opacity: 0;
-    animation: fadeSlideUp 1s ease forwards;
+    /* animation: fadeSlideUp 1s ease forwards; */
     animation-delay: 3s;
-    margin-top: 30px;
+    /* margin-top: 30px; */
+    font-family: 'Lilita One', cursive;
+    width: 80%;
+    margin: auto;
+    color: bisque;
 }
 
 #ctaText {
     /* font-size: 20px; */
     /* font-weight: 900; */
-    color: #ffd600;
+    color: turquoise;
     opacity: 0;
     animation: fadeSlideUp 1s ease forwards;
     animation-delay: 5s;
-    margin-top: 50px;
+    margin-top: 30px;
+    font-family: monospace;
 }
 
 .subscribe-icon img {
@@ -170,4 +182,12 @@ select {
 .fontCheck{
     visibility: hidden; 
   
+}
+
+.noDisplay{
+    display: none;
+}
+
+.noVisibility{
+    visibility: hidden;
 }

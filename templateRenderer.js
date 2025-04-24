@@ -7,9 +7,9 @@ let dummyInputData = [
     {
       templateType: "Fact",
       title: "Mind Blown 🤯",
-      text1: "Octopuses have three hearts",
-      text2: "Two hearts pump blood to the gills",
-      text3: "One heart pumps blood to the body",
+      text1: "Octopuses have three hearts^Two hearts pump blood to the gills^One heart pumps blood to the body",
+      text2: "",
+      text3: "",
       text4: "",
       text5: "",
       text6: "",
@@ -26,8 +26,8 @@ let dummyInputData = [
     {
       templateType: "Quote",
       title: "",
-      text1: "Success is not final, failure is not fatal:",
-      text2: "It is the courage to continue that counts.",
+      text1: "Success is not final, failure is not fatal.^It is the courage to continue that counts.",
+      text2: "",
       text3: "",
       text4: "",
       text5: "",
@@ -45,11 +45,11 @@ let dummyInputData = [
     {
       templateType: "List",
       title: "Top 5 Energy Boosters ⚡",
-      text1: "1. Morning sunlight",
-      text2: "2. 2L water",
-      text3: "3. 30 min walk",
-      text4: "4. Cold shower",
-      text5: "5. Deep breathing",
+      text1: "1. Morning sunlight^2. 2L water^3. 30 min walk^4. Cold shower^5. Deep breathing",
+      text2: "",
+      text3: "",
+      text4: "",
+      text5: "",
       text6: "",
       text7: "",
       text8: "",
@@ -64,9 +64,9 @@ let dummyInputData = [
     {
       templateType: "Challenge",
       title: "Brain Teaser 🧠",
-      text1: "I speak without a mouth",
-      text2: "I echo but have no ears",
-      text3: "What am I?",
+      text1: "I speak without a mouth^I echo but have no ears^What am I?",
+      text2: "",
+      text3: "",
       text4: "",
       text5: "",
       text6: "",
@@ -83,9 +83,9 @@ let dummyInputData = [
     {
       templateType: "Life Advice",
       title: "Simple Truth 🌱",
-      text1: "You can't pour from an empty cup.",
-      text2: "Take care of yourself first.",
-      text3: "Even 10 minutes a day is enough.",
+      text1: "You can't pour from an empty cup.^Take care of yourself first.^Even 10 minutes a day is enough.",
+      text2: "",
+      text3: "",
       text4: "",
       text5: "",
       text6: "",
@@ -102,9 +102,9 @@ let dummyInputData = [
     {
       templateType: "Fact",
       title: "Weird But True 😲",
-      text1: "Sharks existed before trees!",
-      text2: "Trees: 350 million years ago",
-      text3: "Sharks: 400 million years ago",
+      text1: "Sharks existed before trees!^Trees: 350 million years ago^Sharks: 400 million years ago",
+      text2: "",
+      text3: "",
       text4: "",
       text5: "",
       text6: "",
@@ -140,9 +140,9 @@ let dummyInputData = [
     {
       templateType: "List",
       title: "3 Quick Wins Today 🎯",
-      text1: "✅ Make your bed",
-      text2: "✅ Drink water",
-      text3: "✅ Plan your top 3 tasks",
+      text1: "✅ Make your bed^✅ Drink water^✅ Plan your top 3 tasks",
+      text2: "",
+      text3: "",
       text4: "",
       text5: "",
       text6: "",
@@ -159,8 +159,8 @@ let dummyInputData = [
     {
       templateType: "Challenge",
       title: "Can You Guess? 🤔",
-      text1: "The more you take, the more you leave behind.",
-      text2: "What are they?",
+      text1: "The more you take, the more you leave behind.^What are they?",
+      text2: "",
       text3: "",
       text4: "",
       text5: "",
@@ -178,9 +178,9 @@ let dummyInputData = [
     {
       templateType: "Life Advice",
       title: "Gentle Reminder 💛",
-      text1: "Slow progress is still progress.",
-      text2: "Resting is part of the journey.",
-      text3: "You’re doing better than you think.",
+      text1: "Slow progress is still progress.^Resting is part of the journey.^You’re doing better than you think.",
+      text2: "",
+      text3: "",
       text4: "",
       text5: "",
       text6: "",
@@ -235,6 +235,7 @@ function splitTextIntoSpans(element, text, baseDelay = 1.5) {
 }
 
 function showContent(data) {
+    console.log("showContent called with data:", data);
     const titleEl = document.getElementById('title');
     const mainTextEl = document.getElementById('mainText');
     const subTextEl = document.getElementById('subText');
@@ -265,17 +266,46 @@ function showContent(data) {
     let mainTexts = data.mainTexts;
     let currentIndex = 0;
 
+    let totalTextLength = 0;
+    for (let i = 0; i < mainTexts.length; i++) {
+        totalTextLength += mainTexts[i].length;
+    }
+
     function displayNextText() {
         if (currentIndex < mainTexts.length) {
+
+            // Clear previous text element if it exists
+            mainTextEl.innerHTML = '';
+
             const text = mainTexts[currentIndex];
             const textElement = document.createElement('p');
-            textElement.textContent = text;
+            let subTexts = text.split("^");
+            let prevText = "";
+            if (subTexts.length > 1) {
+                for (let i = 0; i < subTexts.length; i++) {
+                    let subTextElement = document.createElement('p');
+                    if (i > 0) {
+                        //subTextElement.className = "noDisplay";
+                        subTextElement.style.visibility = "hidden";
+                        //removeNoDisplayAfterSeconds(subTextElement, subTexts[i-1].length/10);
+                        addVisibilityClass(subTextElement, prevText.length/10);
+                    }
+                    subTextElement.textContent = subTexts[i];
+                    subTextElement.classList.add("fade-in-slide-Up");
+                    mainTextEl.appendChild(subTextElement);
+                    prevText = prevText + subTexts[i];
+                }
+                
+            }else {
+                textElement.textContent = text;
+            }
+                
+
 
             // Calculate duration based on text length (you can adjust the multiplier)
             const durationMs = text.length * 100; // Example: 100ms per character
 
-            // Clear previous text element if it exists
-            mainTextEl.innerHTML = '';
+
             mainTextEl.appendChild(textElement);
 
             if (currentIndex < mainTexts.length - 1) {
@@ -292,9 +322,30 @@ function showContent(data) {
     displayNextText(); // Start displaying the first text
 
     subTextEl.textContent = decodeURIComponent(data.subText);
+    subTextEl.style.visibility = "hidden";
+    addVisibilityClass(subTextEl, totalTextLength/10);
 
     // CTA and Subscribe
     ctaTextEl.textContent = decodeURIComponent(data.ctaText);
+    ctaTextEl.style.visibility = "hidden";
+    addVisibilityClass(ctaTextEl, (totalTextLength/10) + 1);
+}
+
+function removeNoDisplayAfterSeconds(element, seconds) {
+    setTimeout(() => {
+        element.style.display = 'block';
+    }, seconds * 1000);
+}
+
+function addVisibilityClass(element, seconds) {
+    setTimeout(() => {
+        
+        // 🔹 Reset animation (remove & re-add class)
+        element.classList.remove("fade-in-slide-Up");
+        void element.offsetWidth;  // Trigger reflow to restart animation
+        element.classList.add("fade-in-slide-Up");
+        element.style.visibility = 'visible';
+    }, seconds * 1000);
 }
 
 function showContent_old(data) {
