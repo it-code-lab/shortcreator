@@ -21,7 +21,7 @@ let dummyInputData = [
         ctaText: "👉 Follow for more wild facts!",
         musicFile: "background_music/sample_music.mp3",
         musicVolume: 0.2,
-        backgroundVideo: "background_videos/sample_bg.mp4",
+        backgroundVideo: "sample_bg",
         ttsEnabled: true
     },
     {
@@ -41,7 +41,7 @@ let dummyInputData = [
         ctaText: "",
         musicFile: "background_music/sample_music.mp3",
         musicVolume: 0.2,
-        backgroundVideo: "background_videos/sample_bg.mp4",
+        backgroundVideo: "sample_bg",
         ttsEnabled: true
     },
     {
@@ -61,7 +61,7 @@ let dummyInputData = [
         ctaText: "💪 Stay energized!",
         musicFile: "background_music/sample_music.mp3",
         musicVolume: 0.2,
-        backgroundVideo: "background_videos/sample_bg.mp4",
+        backgroundVideo: "sample_bg",
         ttsEnabled: true
     },
     {
@@ -81,7 +81,7 @@ let dummyInputData = [
         ctaText: "🧩 Follow for daily riddles!",
         musicFile: "background_music/sample_music.mp3",
         musicVolume: 0.2,
-        backgroundVideo: "background_videos/sample_bg.mp4",
+        backgroundVideo: "sample_bg",
         ttsEnabled: true
     },
     {
@@ -101,7 +101,7 @@ let dummyInputData = [
         ctaText: "✨ Share this with someone who needs it!",
         musicFile: "background_music/sample_music.mp3",
         musicVolume: 0.2,
-        backgroundVideo: "background_videos/sample_bg.mp4",
+        backgroundVideo: "sample_bg",
         ttsEnabled: true
     },
     {
@@ -121,7 +121,7 @@ let dummyInputData = [
         ctaText: "",
         musicFile: "background_music/sample_music.mp3",
         musicVolume: 0.2,
-        backgroundVideo: "background_videos/sample_bg.mp4",
+        backgroundVideo: "sample_bg",
         ttsEnabled: true
     },
     {
@@ -141,7 +141,7 @@ let dummyInputData = [
         ctaText: "",
         musicFile: "background_music/sample_music.mp3",
         musicVolume: 0.2,
-        backgroundVideo: "background_videos/sample_bg.mp4",
+        backgroundVideo: "sample_bg",
         ttsEnabled: true
     },
     {
@@ -161,7 +161,7 @@ let dummyInputData = [
         ctaText: "",
         musicFile: "background_music/sample_music.mp3",
         musicVolume: 0.2,
-        backgroundVideo: "background_videos/sample_bg.mp4",
+        backgroundVideo: "sample_bg",
         ttsEnabled: true
     },
     {
@@ -181,7 +181,7 @@ let dummyInputData = [
         ctaText: "",
         musicFile: "background_music/sample_music.mp3",
         musicVolume: 0.2,
-        backgroundVideo: "background_videos/sample_bg.mp4",
+        backgroundVideo: "sample_bg",
         ttsEnabled: true
     },
     {
@@ -201,7 +201,7 @@ let dummyInputData = [
         ctaText: "✨ Be kind to yourself.",
         musicFile: "background_music/sample_music.mp3",
         musicVolume: 0.2,
-        backgroundVideo: "background_videos/sample_bg.mp4",
+        backgroundVideo: "sample_bg",
         ttsEnabled: true
     }
 ];
@@ -278,7 +278,7 @@ function showContent(data) {
 
     // Animate MainText blocks sequentially
     mainTexts = data.mainTexts;
-
+    ttsEnabled = data.ttsEnabled;
     let totalTextLength = 0;
     for (let i = 0; i < mainTexts.length; i++) {
         totalTextLength += mainTexts[i].length;
@@ -305,6 +305,7 @@ function displayNextText() {
         let currentText = mainTexts[currentIndex];
         let parts = currentText.includes("^") ? currentText.split("^") : [currentText];
         const partElements = [];
+        // ttsEnabled = data.ttsEnabled;
 
         // Step 1: Add all elements initially (but hidden)
         parts.forEach((part, index) => {
@@ -433,6 +434,7 @@ function addVisibility(element, seconds=0) {
 }
 
 function speakText(text, onComplete) {
+    console.log("speakText called with text:", text);
     if (!window.speechSynthesis) return onComplete();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'en-US';
@@ -464,7 +466,7 @@ function readFromDummyInputData(selectedOption) {
         ctaText: selectedData.ctaText || "",
         musicFile: selectedData.musicFile || "background_music/sample_music.mp3",
         musicVolume: parseFloat(selectedData.musicVolume) || 0.2,
-        backgroundVideo: selectedData.backgroundVideo || "background_videos/sample_bg.mp4",
+        backgroundVideo: "background_videos/" + selectedData.backgroundVideo  + ".mp4" || "background_videos/sample_bg.mp4",
         ttsEnabled: selectedData.ttsEnabled || false
     };
 }
@@ -484,6 +486,13 @@ textStyleDropdown.addEventListener("change", () => {
     // Apply new style
     contentContainer.classList.add(content_style);
     showContent(data);
+});
+
+backgroundStyle.addEventListener("change", () => {
+    let video = "background_videos/" + backgroundStyle.value + ".mp4";
+    bgVideo.src = video;
+    document.getElementById('bgVideo').load();
+
 });
 
 loadDataDropdown.addEventListener("change", () => {
